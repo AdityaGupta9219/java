@@ -21,6 +21,10 @@ class Student {
         this.rollnumber = rollnumber;
     }
     public void setpercentage(double percentage){
+        if(percentage< 0 || percentage>100){
+            System.out.println("Invalid percentage");
+            return;
+        }
         this.percentage = percentage;
     }
     public String getname(){
@@ -35,18 +39,9 @@ class Student {
     public void printDetails(){
         System.out.println(name + " "+ rollnumber+" "+percentage);
     }
-    public void setPercentage(double per){
-        if(percentage< 0 || percentage>100){
-            System.out.println("Invalid percentage");
-            return;
-        }
-        else {
-            percentage = per;
-        }
-    }
 }
 
-class StudentTest extends Student{
+class StudentTest{
     public static void main(String [] args){
         Student s1 = new Student();
         s1.setname("aditya gupta");
